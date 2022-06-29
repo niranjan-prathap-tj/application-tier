@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app-layer
-          image: 523560969628.dkr.ecr.ap-south-1.amazonaws.com/backend:latest
+          image: 510567620487.dkr.ecr.ap-south-1.amazonaws.com/application-tier:latest
           ports:
             - containerPort: 8080
 
@@ -24,7 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-service
+  name: application-layer-service
 spec:
   type: NodePort
   selector:
