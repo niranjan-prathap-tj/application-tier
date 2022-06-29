@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application-layer-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-layer
+  template:
+    metadata:
+      labels:
+        app: app-layer
+    spec:
+      containers:
+        - name: app-layer
+          image: 523560969628.dkr.ecr.ap-south-1.amazonaws.com/backend:latest
+          ports:
+            - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: NodePort
+  selector:
+    app: app-layer
+  ports:
+    - nodePort: 31479  
+      port: 8081 
+      targetPort: 8080 
