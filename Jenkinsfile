@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('AWS ECR Authentication') {
             steps {
-               sh ''' echo ECR Authentication small change to trigger webhook '''
+               sh ''' echo ECR Authentication small change(s) to trigger webhook '''
                sh ''' sudo -H -u i21177 bash -c 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 510567620487.dkr.ecr.ap-south-1.amazonaws.com' '''
             }
         }
