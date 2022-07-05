@@ -45,4 +45,10 @@ public class DemoController {
         return wishRepository.findAll();
     }
 
+    @CrossOrigin
+    @GetMapping("/api/test") 
+    public String test() {
+        return "Hello World";
+    }
+
 }
