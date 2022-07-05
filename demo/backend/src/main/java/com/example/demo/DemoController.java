@@ -48,7 +48,7 @@ public class DemoController {
     @CrossOrigin
     @GetMapping("/api/test") 
     public String test() {
-        return "Hello World";
+        return "Hello World!";
     }
 
 }
