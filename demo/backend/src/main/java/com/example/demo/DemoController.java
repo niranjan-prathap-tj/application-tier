@@ -10,7 +10,7 @@ import com.example.demo.MessageRepository;
 
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://http://3.109.60.25:31479")
 public class DemoController {
 
     @Autowired
