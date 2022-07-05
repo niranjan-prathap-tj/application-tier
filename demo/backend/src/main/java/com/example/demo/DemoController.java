@@ -33,7 +33,7 @@ public class DemoController {
         wishMessages.add(new Message("Good Night"));
     }
    
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin
     @GetMapping("/api/v1") 
     public List<Message> messages() {
         return messageRepository.findAll();
