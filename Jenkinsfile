@@ -20,6 +20,7 @@ pipeline {
         }
         stage ('EKS Deployment') {
             steps {
+                sh ''' sudo -H -u i21177 bash -c 'kubectl delete deployment application-layer-deployment 2> /dev/null' '''
                 sh ''' sudo -H -u i21177 bash -c 'kubectl apply -f /mnt/c/Application-Tier/demo/bootappdeployment.yaml' '''
             }
         }
